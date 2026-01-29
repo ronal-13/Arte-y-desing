@@ -1,0 +1,337 @@
+/* ======== FORMULARIO ======== */
+.formWrapper {
+  width: 100%;
+  max-width: 31.5rem; /* 35 * 0.9 */
+  padding: 1.8rem 2.7rem; /* 2 * 0.9 / 3 * 0.9 */
+}
+
+.formCard {
+  background: white;
+  border-radius: 0.9rem; /* 1 * 0.9 */
+  box-shadow: 0 22.5px 45px -10.8px rgba(0, 0, 0, 0.25);
+  padding: 2.7rem 3.15rem; /* 3 * 0.9 / 3.5 * 0.9 */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  animation: slideInRight 0.6s ease-out;
+  min-height: 540px; /* 600 * 0.9 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.formCard::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 0.9rem;
+  padding: 2.7px; /* 3px * 0.9 */
+  background: linear-gradient(135deg, #1DD1E3, #FF9912);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: exclude;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+.formCard::after {
+  content: '';
+  position: absolute;
+  top: -1.8px; left: -1.8px; right: -1.8px; bottom: -1.8px;
+  border-radius: 0.9rem;
+  box-shadow: 0 0 27px rgba(29, 209, 227, 0.4),
+              -9px 0 22.5px rgba(29, 209, 227, 0.2);
+  z-index: -2;
+}
+
+/* ======== HEADER DEL FORM ======== */
+.formHeader {
+  text-align: center;
+  margin-bottom: 1.62rem; /* 1.8 * 0.9 */
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.welcomeTitle {
+  color: #28afca;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 600;
+  font-size: 1.35rem; /* 1.5 * 0.9 */
+  margin-bottom: 0.45rem; /* 0.5 * 0.9 */
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.45rem; /* 0.5 * 0.9 */
+}
+
+.formLogo {
+  width: 405px; /* 450 * 0.9 */
+  height: auto;
+}
+
+.brandText {
+  margin-bottom: 0.18rem; /* 0.2 * 0.9 */
+  letter-spacing: 0.045rem; /* 0.05 * 0.9 */
+}
+
+.brandArte, .brandIdeas {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  font-weight: 400;
+  font-size: 1.44rem; /* 1.6 * 0.9 */
+}
+
+.brandArte { color: #FF9912; }
+.brandIdeas { color: #49BDD4; margin-left: 0.09rem; /* 0.1 * 0.9 */ }
+
+.subtitle {
+  color: #9CA3AF;
+  font-weight: 400;
+  font-size: 0.855rem; /* 0.95 * 0.9 */
+  margin-top: 0.09rem; /* 0.1 * 0.9 */
+}
+
+/* ======== ERRORES ======== */
+.errorMessage {
+  margin-bottom: 0.9rem; /* 1 * 0.9 */
+  padding: 0.675rem; /* 0.75 * 0.9 */
+  background-color: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-radius: 0.45rem; /* 0.5 * 0.9 */
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.errorText, .errorMessageField {
+  font-size: 0.788rem; /* 0.875 * 0.9 */
+  color: #DC2626;
+}
+
+.errorMessageField { margin-top: 0.225rem; /* 0.25 * 0.9 */ }
+
+/* ======== CAMPOS ======== */
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 1.26rem; /* 1.4 * 0.9 */
+}
+
+.inputGroup {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.label {
+  font-size: 0.788rem; /* 0.875 * 0.9 */
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.36rem; /* 0.4 * 0.9 */
+}
+
+.input {
+  width: 100%;
+  padding: 0.585rem 0.81rem; /* 0.65 / 0.9 *0.9 */
+  border-radius: 0.45rem; /* 0.5 * 0.9 */
+  border: none;
+  outline: none;
+  background-color: #E0F2FE;
+  transition: all 0.2s;
+  font-size: 0.81rem; /* 0.9 *0.9 */
+}
+
+.input:focus { background-color: #DBEAFE; }
+
+.inputError {
+  background-color: #FEF2F2;
+  border: 1px solid #FECACA;
+}
+
+/* ======== CONTRASEÑA ======== */
+.passwordContainer { position: relative; }
+
+.passwordInput { padding-right: 2.52rem; /* 2.8 * 0.9 */ }
+
+.passwordToggle {
+  position: absolute;
+  right: 0.675rem; /* 0.75 * 0.9 */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9CA3AF;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.passwordToggle:hover { color: #6B7280; }
+
+/* ======== BOTÓN ======== */
+.submitButton {
+  width: 100%;
+  padding: 20.7px 0; /* 23 * 0.9 */
+  border-radius: 0.45rem; /* 0.5 * 0.9 */
+  color: white;
+  font-weight: 500;
+  background: linear-gradient(90deg, #FF9912 0%, #FF6B35 100%);
+  font-family: 'Be Vietnam Pro', sans-serif;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 1.26rem; /* 1.4 * 0.9 */
+  margin-top: 0.09rem; /* 0.1 * 0.9 */
+}
+
+.submitButton:hover:not(:disabled) { transform: scale(1.04); }
+.submitButton:active { transform: scale(0.95); }
+.submitButton:disabled { opacity: 0.7; cursor: not-allowed; }
+
+/* ======== ANIMACIONES ======== */
+@keyframes slideInRight {
+  0% { opacity: 0; transform: translateX(45px); } /* 50 *0.9 */
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(27px); } /* 30 *0.9 */
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ======== BURBUJAS ======== */
+/* 🌅 Fondo con degradado más intenso y luminoso */
+/* 🌈 Fondo degradado animado entre azul y naranja */
+.bubblesContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1DD1E3, #FF9912);
+  background-size: 200% 200%;
+  animation: gradientFlow 12s ease infinite;
+  z-index: 0;
+}
+
+/* 🎨 Movimiento suave del degradado */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 💧 Burbujas realistas con brillo y profundidad */
+.bubble {
+  position: absolute;
+  bottom: -150px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.25) 40%, rgba(255, 255, 255, 0.05) 80%);
+  border-radius: 50%;
+  box-shadow: inset -10px -10px 25px rgba(0, 0, 0, 0.1),
+              inset 10px 10px 25px rgba(255, 255, 255, 0.6),
+              0 5px 20px rgba(0, 0, 0, 0.2);
+  animation: floatUp var(--speed, 2.5s) linear infinite;
+  opacity: 0.85;
+  filter: blur(0.3px);
+}
+
+/* 🌬️ Movimiento flotante orgánico */
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.85;
+  }
+  25% {
+    transform: translateY(-25vh) translateX(15px) scale(1.05);
+  }
+  50% {
+    transform: translateY(-50vh) translateX(-10px) scale(0.95);
+  }
+  75% {
+    transform: translateY(-80vh) translateX(20px) scale(1.1);
+  }
+  100% {
+    transform: translateY(-110vh) translateX(-15px) scale(1);
+    opacity: 0;
+  }
+}
+
+/* 🌈 Tonos suaves inspirados en el fondo */
+.bubble:nth-child(3n) {
+  background: radial-gradient(circle at 40% 40%, rgba(255,255,255,0.9), rgba(29,209,227,0.35), rgba(255,153,18,0.25));
+}
+.bubble:nth-child(5n) {
+  background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.9), rgba(255,153,18,0.4), rgba(29,209,227,0.25));
+}
+
+/* 💨 Burbujas con velocidad muy rápida (2–3 s) */
+.bubble:nth-child(1)  { left: 5%;  width: 40px;  height: 40px;  --speed: 2.2s; }
+.bubble:nth-child(2)  { left: 15%; width: 80px;  height: 80px;  --speed: 2.5s; }
+.bubble:nth-child(3)  { left: 25%; width: 60px;  height: 60px;  --speed: 2.8s; }
+.bubble:nth-child(4)  { left: 35%; width: 100px; height: 100px; --speed: 3s; }
+.bubble:nth-child(5)  { left: 45%; width: 70px;  height: 70px;  --speed: 2.3s; }
+.bubble:nth-child(6)  { left: 55%; width: 120px; height: 120px; --speed: 2.9s; }
+.bubble:nth-child(7)  { left: 65%; width: 50px;  height: 50px;  --speed: 2s; }
+.bubble:nth-child(8)  { left: 75%; width: 110px; height: 110px; --speed: 2.6s; }
+.bubble:nth-child(9)  { left: 85%; width: 90px;  height: 90px;  --speed: 2.4s; }
+.bubble:nth-child(10) { left: 92%; width: 60px;  height: 60px;  --speed: 2.7s; }
+.bubble:nth-child(11) { left: 12%; width: 130px; height: 130px; --speed: 2.9s; }
+.bubble:nth-child(12) { left: 58%; width: 140px; height: 140px; --speed: 3s; }
+.bubble:nth-child(13) { left: 33%; width: 90px;  height: 90px;  --speed: 2.8s; }
+.bubble:nth-child(14) { left: 78%; width: 120px; height: 120px; --speed: 2.7s; }
+.bubble:nth-child(15) { left: 50%; width: 100px; height: 100px; --speed: 2.4s; }
+.bubble:nth-child(16) { left: 20%; width: 150px; height: 150px; --speed: 3s; }
+.bubble:nth-child(17) { left: 68%; width: 80px;  height: 80px;  --speed: 2.3s; }
+.bubble:nth-child(18) { left: 40%; width: 130px; height: 130px; --speed: 2.8s; }
+.bubble:nth-child(19) { left: 82%; width: 70px;  height: 70px;  --speed: 2.5s; }
+.bubble:nth-child(20) { left: 10%; width: 110px; height: 110px; --speed: 2.6s; }
+
+
+
+
+/* ======== FOOTER ======== */
+.footer {
+  position: relative;
+  z-index: 20;
+  background-color: #FB923C;
+  height: 57px;
+}
+
+/* ======== LINKS ======== */
+.forgotPasswordLink {
+  color: #1DD1E3;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.forgotPasswordLink:hover {
+  color: #0FB8D1;
+  text-decoration: underline;
+}
+
+.forgotPasswordContainer {
+  margin-top: 0.25rem;
+  margin-bottom: 0.125rem;
+}
+
+/* ======== ANIMACIONES ======== */
+@keyframes slideInRight {
+  0% { opacity: 0; transform: translateX(50px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+
+/* 👇 centramos el contenido principal */
+.centerWrapper {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
